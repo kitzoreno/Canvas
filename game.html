@@ -6,16 +6,30 @@
     <canvas id="gameCanvas" width="400" height="400"></canvas>
 <script>
     var canvas , canvasContext;
+    
     window.onload = function(){
         canvas = document.getElementById('gameCanvas');
         canvasContext = canvas.getContext('2d');
     
-    setInterval(mainloop, 1000/50);
+        setInterval(mainloop, 1000/50);
     
     }
     
+    var playerXpos = 0;
+    var playerYpos = 0;
+    var playerXspeed = 0;
+    var playerYspeed = 0;
+    const PLAYER_SIZE = 0;
+    
     function mainloop(){
+        colorRect(0,0,canvas.width,canvas.height,'black');
+        colorRect(0,0,20,20,'red');
         
+    }
+    
+    function colorRect(x,y,w,h,c){
+        canvasContext.fillStyle = c;
+        canvasContext.fillRect(x,y,w,h);
     }
     
     </script>
